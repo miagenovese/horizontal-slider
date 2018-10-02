@@ -21,12 +21,17 @@
 .hs {
   display: grid;
   grid-gap: calc(var(--gutter) / 2);
-  grid-template-columns: repeat(6, calc(50% - var(--gutter) * 2));
+  grid-template-columns: 10px repeat(var(--total), calc(50% - var(--gutter) * 2)) 10px;
   grid-template-rows: minmax(150px, 1fr);
   overflow-x: scroll;
   scroll-snap-type: x proximity;
   padding-bottom: calc(.75 * var(--gutter));
   margin-bottom: calc(-.25 * var(--gutter));
+}
+
+.hs:before,
+.hs:after {
+  content: '';
 }
 
 html,
@@ -37,7 +42,7 @@ body {
 body {
   display: grid;
   place-items: center;
-  background: 	#eef2f6;
+  background: #eef2f6;
 }
 
 ul {
